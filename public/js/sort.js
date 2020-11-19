@@ -6,6 +6,17 @@ window.collection = [];
 // Whenever album collection page loads
 window.addEventListener('load', async function() {
     
+    const albums = document.getElementsByClassName('albums');
+    
+    // Adds front label to front album
+    for (let i = 0; i < albums.length; ++i) {
+        if (albums[i].style.top === '90px') {
+            albums[i].classList.add('front');
+        } else {
+            albums[i].classList.remove('front');
+        }
+    }
+
     updateAlbumText(curr_category);
     
     // Retrieves milk crate in json format
@@ -255,7 +266,8 @@ function finishSorting(sorted) {
 
 // Deletes albums if dragged into trash can
 $(function() {
-    $(".albums").draggable({
+    // Only front albums can be draggable
+    $(".front").draggable({
         revert:  function(dropped) {
             var $draggable = $(this),
                 hasBeenDroppedBefore = $draggable.data('hasBeenDropped'),

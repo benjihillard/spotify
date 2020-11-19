@@ -187,3 +187,16 @@ $("#menu").click(function(e) {
     e.preventDefault();
     $("#sidebar").css('left', '-100vw');
   });
+
+// Adds a class label for albums in front
+window.addEventListener('keyup', () => {
+    const albums = document.getElementsByClassName('albums');
+    
+    for (let i = 0; i < albums.length; ++i) {
+        if (albums[i].style.top === '90px') {
+            albums[i].classList.add('front');
+        } else {
+            albums[i].classList.remove('front');
+        }
+    }
+});
