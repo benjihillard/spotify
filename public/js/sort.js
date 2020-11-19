@@ -256,7 +256,24 @@ function finishSorting(sorted) {
 // Deletes albums if dragged into trash can
 $(function() {
     $(".albums").draggable({
-        revert: true
+        revert:  function(dropped) {
+            var $draggable = $(this),
+                hasBeenDroppedBefore = $draggable.data('hasBeenDropped'),
+                wasJustDropped = dropped && dropped[0].id == "droppable";
+            if(wasJustDropped) {
+                // don't revert, it's in the droppable
+                return false;
+            } else {
+                if (hasBeenDroppedBefore) {
+                    // don't rely on the built in revert, do it yourself
+                    $draggable.animate({ top: 0, left: 0 }, 'slow');
+                    return false;
+                } else {
+                    // just let the built in revert work, although really, you could animate to 0,0 here as well
+                    return true;
+                }
+            }
+       }
     });
 
     $('#trash').droppable({

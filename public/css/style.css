@@ -6,7 +6,7 @@ body {
 }
 
 .divider {
-    margin-top: 200px;
+    margin-top: 130px;
 }
 
 #playerContainer, #currentRecordContainer, #currentSongContainer {
@@ -59,6 +59,14 @@ body {
 
 .playerButtons:focus, input[type="button"]:focus {
     outline: none;
+}
+
+#trash {
+    position: fixed; 
+    bottom:0; 
+    right:0; 
+    width: 100px;
+    height: 100px;
 }
 
 .searchbar{
