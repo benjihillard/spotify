@@ -17,6 +17,8 @@ window.addEventListener('load', async function() {
         }
     }
 
+    $('.front').draggable();
+
     updateAlbumText(curr_category);
     
     // Retrieves milk crate in json format
