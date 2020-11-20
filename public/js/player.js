@@ -17,7 +17,7 @@ window.onSpotifyWebPlaybackSDKReady = async function() {
     document.getElementById('currentRecordImage').src = uriBody[0][0].img;
 
     // Milk Crate Player
-    const player = new Spotify.Player({
+    window.player = new Spotify.Player({
         name: 'Milk Crate',
         getOAuthToken: cb => { cb(token); }
     });
@@ -155,7 +155,7 @@ function revertBackToCrate(obj, parent) {
     newElem.src = obj.img;
     newElem.alt = obj.name;
 
-    $(".albums").draggable({
+    $(".front").draggable({
         revert: true
     });
 
