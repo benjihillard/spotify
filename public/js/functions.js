@@ -174,6 +174,8 @@ function addAlbum(id){
     });
     let params = {'id' : id}
     xhr.send(JSON.stringify(params));
+
+    window.location.href = '/milkcrate';
 }
 
 $("#menu").click(function(e) {
