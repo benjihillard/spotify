@@ -272,7 +272,7 @@ function moveAlbumsUp(parent) {
             if (childElems[i].style.top === '90px') {
                 childElems[i].classList.add('front');
                 $('.front').draggable();
-                document.getElementsByClassName('album-text')[0].innerText = childElems[i].id;
+                document.getElementsByClassName('album-text')[parent.id].innerText = childElems[i].id;
             }
         }
     }

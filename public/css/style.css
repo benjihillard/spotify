@@ -69,6 +69,14 @@ body {
     height: 100px;
 }
 
+#plus {
+    position: fixed; 
+    bottom:0; 
+    right:0; 
+    width: 150px;
+    height: 150px;
+}
+
 .searchbar{
     margin-bottom: auto;
     margin-top: auto;

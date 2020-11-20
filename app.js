@@ -194,6 +194,9 @@ app.get('/discover', function(req, res) {
       if(albums.length > 0){
         collection.push(albums);
       }
+
+      storedCollections = collection;
+
       res.render('discover', {collection : collection});
     });
   }); 
